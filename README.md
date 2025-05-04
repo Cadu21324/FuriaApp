@@ -1,15 +1,15 @@
-# 🦊 ChatBot FURIA para Fãs de CS:GO
+# ChatBot FURIA para Fãs de CS:GO
 
 Este é um chat interativo para fãs da FURIA, criado com Flask e HTML. Com uma interface simples e acessível, o bot simula interações com a torcida e oferece links úteis para acompanhar o time.
 
-## 💬 Funcionalidades
+## Funcionalidades
 
 - Simula uma conversa com o "Bot da FURIA"
 - Respostas automáticas baseadas em botões (Jogadores, Produtos, Jogos, etc)
 - Links diretos para redes sociais, loja, suporte e partidas
 - Interface estilizada com a identidade visual da FURIA
 
-## 🚀 Como rodar localmente
+## Como rodar localmente
 
 ### Requisitos
 
