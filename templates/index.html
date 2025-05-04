@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Assistente Virtual</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #242323;
+      background-image: url("https://images.seeklogo.com/logo-png/42/2/furia-esports-logo-png_seeklogo-428783.png");
+      background-size: 150px;
+      background-repeat: repeat;
+      background-position: center center;
+      background-attachment: fixed;
+    }
+
+    .chat-box {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: rgb(24, 24, 24);
+      border-radius: 10px;
+      box-shadow: 0 0 10px #fafafa;
+    }
+
+    .message {
+      margin: 10px 0;
+    }
+
+    .user {
+      text-align: right;
+      color: white;
+    }
+
+    .bot {
+      text-align: left;
+      color: rgb(196, 153, 13);
+    }
+
+    img {
+      width: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-box">
+    <img src="https://upload.wikimedia.org/wikipedia/pt/f/f9/Furia_Esports_logo.png" alt="furia-logo">
+    <h3 style="color:#fafafa" class="text-center">Assistente Furial</h3>
+    <div id="chat">
+      <div class="message bot"><strong>Bot:</strong> Olá, sou seu Assistente Virtual Da Furiagg💥💥. Como posso te ajudar hoje?</div>
+      <div class="message bot"><strong>Bot:</strong> Se está com dúvida do que me perguntar, veja algumas das perguntas mais frequentes feitas por FURIOSOS(AS)🔥🔥!!!</div>
+    </div>
+
+    <button class="btn btn-primary mt-2" onclick="enviarMensagem('produtos')">Produtos</button>
+    <button class="btn btn-primary mt-2" onclick="enviarMensagem('jogadores')">Jogadores</button>
+    <button class="btn btn-primary mt-2" onclick="enviarMensagem('jogos')">Jogos</button>
+    <button class="btn btn-primary mt-2" onclick="enviarMensagem('suporte')">Suporte</button>
+    <button class="btn btn-primary mt-2" onclick="enviarMensagem('redes_sociais')">Redes Sociais</button>
+  </div>
+
+  <script>
+    function enviarMensagem(opcao) {
+      const chat = document.getElementById("chat");
+      chat.innerHTML += `<div class="message user"><strong>Você:</strong> ${opcao}</div>`;
+
+      // Chama a função para gerar a resposta localmente
+      const resposta = obterResposta(opcao);
+      chat.innerHTML += `<div class="message bot"><strong>Bot:</strong> ${resposta}</div>`;
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    // Função que processa a resposta de acordo com a opção
+    function obterResposta(mensagem) {
+      const opcao = mensagem.toLowerCase();
+
+      if (opcao === "produtos") {
+        return "Temos camisas oficiais da FURIA disponíveis na nossa loja! Clique aqui para visitar o site da FURIA: <a href='https://www.furia.gg/' target='_blank'>FURIA.gg</a>";
+      } else if (opcao === "jogadores") {
+        return "A Line-Up titular da FURIA tem os craques:<br>MOLODOY,<br>YEKINDAR,<br>FalleN,<br>KSCERATO,<br>yuurih.<br><br>Reservas:<br>skullz,<br>chelo.<br><br>Coachs:<br>sidde,<br>Hepa.";
+      } else if (opcao === "jogos") {
+        return "Você pode se atualizar sobre as próximas partidas e campeonatos da FURIA aqui: <a href='https://draft5.gg/equipe/330-FURIA/proximas-partidas' target='_blank'>draft5.gg/FURIA</a>";
+      } else if (opcao === "suporte") {
+        return "Você pode entrar em contato pelo e-mail: suporte@furia.gg.";
+      } else if (opcao === "redes_sociais") {
+        return "Você pode seguir a FURIA nas redes sociais:<br><a href='https://www.instagram.com/furiagg/' target='_blank'>Instagram</a>,<br><a href='https://x.com/FURIA' target='_blank'>Twitter</a>,<br><a href='https://www.youtube.com/@FURIAggCS' target='_blank'>Youtube</a>,<br><a href='https://www.facebook.com/furiagg/?locale=pt_BR' target='_blank'>Facebook</a>";
+      } else {
+        return "Desculpe, não entendi sua pergunta. 🤔";
+      }
+    }
+  </script>
+</body>
+</html>
