@@ -63,13 +63,11 @@
       const chat = document.getElementById("chat");
       chat.innerHTML += `<div class="message user"><strong>Você:</strong> ${opcao}</div>`;
 
-      // Chama a função para gerar a resposta localmente
       const resposta = obterResposta(opcao);
       chat.innerHTML += `<div class="message bot"><strong>Bot:</strong> ${resposta}</div>`;
       chat.scrollTop = chat.scrollHeight;
     }
 
-    // Função que processa a resposta de acordo com a opção
     function obterResposta(mensagem) {
       const opcao = mensagem.toLowerCase();
 
